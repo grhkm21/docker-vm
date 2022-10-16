@@ -2,8 +2,13 @@ version: '3'
 services:
     pwn:
         container_name: pwn_test
-        image: skysider/pwndocker
+        build: .
+        volumes: 
+            - /Users/grhkm/Downloads/coding/ctf-related:/ctf/ctfs
         cap_add:
             - SYS_PTRACE
         ports:
             - "23946:23946"
+            - "112:112"
+            - "8080:8080"
+            - "8877:8877"
